@@ -8,6 +8,7 @@ DIRS =  macros \
 	reverseString \
 	strcopy \
 	epoll \
+	readfile \
 
 
 .PHONY: dirs $(DIRS)
