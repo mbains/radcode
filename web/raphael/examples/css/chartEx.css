@@ -1,0 +1,43 @@
+/* 
+    Document   : chartEx
+    Created on : Nov 12, 2010, 2:09:41 PM
+    Author     : bains
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+root { 
+    display: block;
+}
+
+body {
+    background: #333;
+    color: #fff;
+    font: 300 100.1% "Helvetica Neue", Helvetica, "Arial Unicode MS", Arial, sans-serif;
+}
+#holder {
+    height: 700px;
+    width: 1500px;
+
+    background-color: #cccccc;
+    background-position: center center;
+
+/*    margin-left: 8%;
+    margin-top: 4%;*/
+}
+#copy {
+    bottom: 0;
+    font: 300 .7em "Helvetica Neue", Helvetica, "Arial Unicode MS", Arial, sans-serif;
+    position: absolute;
+    right: 1em;
+    text-align: right;
+}
+#copy a {
+    color: #fff;
+}
+

@@ -1,0 +1,28 @@
+1325209483: 8: Dmalloc version '5.5.2' from 'http://dmalloc.com/'
+1325209483: 8: flags = 0x4f4ed03, logfile 'logfile'
+1325209483: 8: interval = 1, addr = 0, seen # = 0, limit = 0
+1325209483: 8: threads enabled, lock-on = 0, lock-init = 2
+1325209483: 8: starting time = 1325209480
+1325209483: 8: process pid = 30910
+1325209483: 8: Dumping Chunk Statistics:
+1325209483: 8: basic-block 4096 bytes, alignment 8 bytes
+1325209483: 8: heap address range: 0x110000 to 0xff1000, 15601664 bytes
+1325209483: 8:     user blocks: 2 blocks, 8192 bytes (15%)
+1325209483: 8:    admin blocks: 11 blocks, 45056 bytes (84%)
+1325209483: 8:    total blocks: 13 blocks, 53248 bytes
+1325209483: 8: heap checked 9
+1325209483: 8: alloc calls: malloc 1, calloc 0, realloc 0, free 1
+1325209483: 8: alloc calls: recalloc 0, memalign 0, valloc 0
+1325209483: 8: alloc calls: new 3, delete 3
+1325209483: 8:   current memory in use: 0 bytes (0 pnts)
+1325209483: 8:  total memory allocated: 32 bytes (4 pnts)
+1325209483: 8:  max in use at one time: 32 bytes (4 pnts)
+1325209483: 8: max alloced with 1 call: 20 bytes
+1325209483: 8: max unused memory space: 48 bytes (60%)
+1325209483: 8: top 10 allocations:
+1325209483: 8:  total-size  count in-use-size  count  source
+1325209483: 8:          32      4           0      0  ra=0xa57113
+1325209483: 8:          32      4           0      0  Total of 1
+1325209483: 8: Dumping Not-Freed Pointers Changed Since Start:
+1325209483: 8:  memory table is empty
+1325209483: 8: ending time = 1325209483, elapsed since start = 0:00:03

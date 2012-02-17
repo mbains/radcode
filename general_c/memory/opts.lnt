@@ -1,0 +1,83 @@
+
+-cgnu           // GNU on Linux
+-width(0,0)     // Do not wrap long lines (makes it easier to parse with AWK script)
+-t4 	    	// Default indentation is 4 characters
++cpp	    	// Add C++ extensions
+
+// GNU implements assert as a macro which calls __assert_fail() on failure.
+// Tell Lint that __assert_fail() and __assert_perror_fail() do not return.
+-function( __assert, assert )
+-function( exit, __assert_fail, __assert_perror_fail )
+
+
++macros	    	// Everytime +macros is invoked, it doubles the allowed length of macros (#define)
++macros	    	// Some of our MOF generated macros are longer than 4096 chars, which is Lint's default size.
++macros
++macros
+
+-emacro(78,offsetof)		// Symbol 'offsetof' typedef'ed at Location used in expression
+-emacro(413,offsetof)		// Likely use of null pointer 'unknown-name' in left argument to operator '->'
+-emacro(545,offsetof)		// Suspicious use of &
+-emacro(620,CLOCKS_PER_SEC)	// Suspicious constant (L or one?)
+-emacro(644,htonl,ntohs,ntohl,htons)	// Variable '__v' .... may not have been initialized
+-emacro(516,ntohs,htons)                // Symbol '__builtin_constant_p()' has arg. type conflict (arg. no. 1 -- signed/unsigned)
+
+-e537           // Warning 537: Repeated include file 'xxx.h'
+-e641           // Warning 641: Converting enum 'xxx' to int
+-e701           // Info 701: Shift left of signed quantity (int)
+-e703           // Info 703: Shift left of signed quantity (long)
+-e717           // Info 717: do ... while(0);
+-e726           // Info 726: Extraneous comma ignored
+-e763           // Info 763: Redundant declaration for symbol 'xxx' previously declared
+-e788           // Info 788: enum constant 'BLAH' not used within defaulted switch
+
+-e801           // Info 801: Use of goto is deprecated
+
+-e1511          // Warning 1511: Member hides non-virtual member
+-e1536          // Warning 1536: Exposing low access member 'xxx::xxx'
+-e1551          // Warning 1551: Function may throw exception '...' in destructor
+
+-e1712          // Info 1712: default constructor not defined for class xxx
+-e1716          // Info 1716: Virtual member function 'xxx::xxx(xxx)' (line xxx, file xxx.h) not referenced
+-e1736 	        // Redundant access specifier (private)
+-e1735          // Virtual function has default parameter
+-e1768          // Info 1768: Virtual function 'xxx::xxx' has an access (protected) different
+                // from the access (public) in the base class
+-e1774          // Info 1774: Could use dynamic_cast to downcast polymorphic type 'xxx'
+
+-esym(528, ctor, dtor)  // Warning 528: Symbol 'ctor(void)' (line ?, file ??) not referenced
+-esym(818, argv)
+-esym(715, argv, argc)
+-esym(666, assert)      // Expression with side effects passed to repeated parameter Integer of macro 'assert'
+
+// Suppress certain errors if they occur in library header files:
+-elib(46)
+
+// Deal with built-in
++d"__builtin_offsetof(__typ,__id)=((size_t)&(((__typ*)0)->__id))"
++d"__builtin_islessequal(__x,__y)=(__x <= __y)"
++d"__builtin_inff()=(1.0/0.0)"
++d"__builtin_nanf()=(0.0/0.0)"
+
+/* Errors related to Linux header files */
+-esym(38,std::fpos<<1>>::_M_state)                      // Error 38: Offset of symbol 'blah' inconsistent
+
+/* C++ 4.2.3 error */
+-esym(40,__FLT_HAS_DENORM__)    // Error 40: Undeclared identifier '__FLT_HAS_DENORM__'
+-esym(40,__DBL_HAS_DENORM__)    // Error 40: Undeclared identifier '__DBL_HAS_DENORM__'
+-esym(40,__LDBL_HAS_DENORM__)   // Error 40: Undeclared identifier '__LDBL_HAS_DENORM__'
+-esym(18,std::basic_ostream<char>::_M_insert)           // Error 18: Symbol redeclared (basic) conflicts with location unknown
+-esym(18,std::basic_ostream<wchar_t>::_M_insert)        // Error 18: Symbol redeclared
+-esym(18,std::basic_istream<char>::_M_extract)          // Error 18: Symbol redeclared
+-esym(18,std::basic_istream<wchar_t>::_M_extract)       // Error 18: Symbol redeclared
+
+/* GCC 4.4.1 header errors (comes with Ubuntu 9.10): */
+-esym(31,AF_TIPC,PF_TIPC)               // Error 31: Symbol redeclared
+-esym(529,__d0,__d1)                    // Warning 529: Symbol not subsequently referenced
+
+/* GCC 4.4.3 header errors (comes with Ubuntu 10.04) */
+-esym(18,std::char_traits<char>::pos_type)      // Error 18: Symbol 'std::char_traits<char>::pos_type' redeclared (basic)
+-esym(18,std::char_traits<char>::state_type)    // Error 18: Symbol 'std::char_traits<char>::state_type' redeclared (basic)
+-esym(18,std::char_traits<wchar_t>::pos_type)   // Error 18: Symbol 'std::char_traits<wchar_t>::pos_type' redeclared (basic)
+-esym(18,std::char_traits<wchar_t>::state_type) // Error 18: Symbol 'std::char_traits<wchar_t>::state_type' redeclared (basic)
+-esym(18,std::ios_base::streampos)              // Error 18: Symbol 'std::ios_base::streampos' redeclared (basic)

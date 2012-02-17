@@ -1,0 +1,28 @@
+/* 
+    Document   : jqplotex1
+    Created on : Oct 26, 2010, 3:51:39 PM
+    Author     : bains
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+root { 
+    display: block;
+}
+
+body {
+    height: 800px;
+    width: 600px;
+}
+#chart_div {
+    height: 30%;
+    width: 40%;
+    font-family: monospace;
+    background-repeat: repeat;
+    background-color: aqua;
+}

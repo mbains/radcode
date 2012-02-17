@@ -1,0 +1,12 @@
+KERNEL
+__KERNEL__
+CONFIG_I2C
+CONFIG_HZ=250
+CONFIG_X86
+
+//HPET not available on all platforms
+CONFIG_HPET_EMULATE_RTC
+
+/usr/src/`uname -r`/include
+/usr/src/`uname -r`/arch/x86/include
+

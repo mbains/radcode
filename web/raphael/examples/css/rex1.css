@@ -1,0 +1,56 @@
+/* 
+    Document   : rex1
+    Created on : Nov 8, 2010, 5:19:57 PM
+    Author     : bains
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+body {
+    background: #333;
+    color: #fff;
+    font: 300 100.1% "Helvetica Neue", Helvetica, "Arial Unicode MS", Arial, sans-serif;
+}
+
+#rex1div {
+    height: 480px;
+    left: 50%;
+    margin: -240px 0 0 -320px;
+    position: absolute;
+    top: 50%;
+    width: 640px;
+    color: #3333ff;
+    background-color: #999999;
+}
+
+#rex2div {
+    height: 880px;
+    left: 50%;
+    margin: -240px 0 0 -320px;
+    position: absolute;
+    top: 130%;
+    width: 640px;
+    color: #3333ff;
+    background-color: #cccccc;
+    bottom: 10%;
+}
+
+#copy {
+    bottom: 0;
+    font: 300 .7em "Helvetica Neue", Helvetica, "Arial Unicode MS", Arial, sans-serif;
+    position: absolute;
+    right: 1em;
+    text-align: right;
+}
+#copy a {
+    color: #fff;
+}
+
+curved {
+    color: #3333ff;
+}

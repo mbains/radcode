@@ -1,0 +1,37 @@
+/* 
+    Document   : ex1
+    Created on : May 29, 2011, 8:14:21 AM
+    Author     : boozer
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+root { 
+    display: block;
+}
+
+#canvascontainer {
+    border: 1px #7D775C solid;
+    margin: 5px 15px 5px 5px;
+    border: 2px #7D775C solid;
+}
+
+
+#buttoncontainer {
+    width: 500px;
+    padding: 5px 5px 5px 5px;
+}
+
+#buttoncontainer input {
+    width: 80px;
+    float: left;
+    display: block;
+    position: relative;
+    margin: 5px 5px 5px 5px;
+}
+

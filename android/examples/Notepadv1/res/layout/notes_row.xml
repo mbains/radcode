@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--This is the View that will be used for each notes title row — it has only one
+text field in it. In this case we create a new id called text1. The + after the 
+@ in the id string indicates that the id should be automatically created as a 
+resource if it does not already exist, so we are defining text1 on the fly and 
+then using it.-->
+<TextView android:id="@+id/text1"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"/>

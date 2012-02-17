@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/svgtoggleswitch/Beryl" >
+        <file>on.svg</file>
+        <file>off.svg</file>
+    </qresource>
+</RCC>

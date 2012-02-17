@@ -1,0 +1,143 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ARRAY_SIZE	memory/main.cpp	8;"	d	file:
+CC	bitfield/Makefile	/^CC = g++$/;"	m
+CC	endian/Makefile	/^CC = g++$/;"	m
+CC	epoll/Makefile	/^CC = g++$/;"	m
+CC	macros/Makefile	/^CC = g++$/;"	m
+CC	memory/Makefile	/^CC = g++$/;"	m
+CC	random_number_gen/Makefile	/^CC = g++$/;"	m
+CC	readfile/Makefile	/^CC=g++$/;"	m
+CC	reverseString/Makefile	/^CC = g++$/;"	m
+CC	stl_map/Makefile	/^CC = g++$/;"	m
+CC	strcopy/Makefile	/^CC = g++$/;"	m
+CC	time/Makefile	/^CC = g++$/;"	m
+CC	tree/Makefile	/^CC=g++$/;"	m
+CC	twokeymap/Makefile	/^CC = g++$/;"	m
+CFLAGS	readfile/Makefile	/^CFLAGS=-O0 -g3 -Wall -c -fmessage-length=0$/;"	m
+CFLAGS	tree/Makefile	/^CFLAGS=-c -Wall -g$/;"	m
+COPTS	bitfield/Makefile	/^COPTS ?= -g$/;"	m
+COPTS	endian/Makefile	/^COPTS ?= -g$/;"	m
+COPTS	epoll/Makefile	/^COPTS ?= -g$/;"	m
+COPTS	macros/Makefile	/^COPTS ?= -g$/;"	m
+COPTS	memory/Makefile	/^COPTS ?= -g$/;"	m
+COPTS	random_number_gen/Makefile	/^COPTS ?= -g$/;"	m
+COPTS	reverseString/Makefile	/^COPTS ?= -g$/;"	m
+COPTS	stl_map/Makefile	/^COPTS ?= -g$/;"	m
+COPTS	strcopy/Makefile	/^COPTS ?= -g$/;"	m
+COPTS	time/Makefile	/^COPTS ?= -g$/;"	m
+COPTS	twokeymap/Makefile	/^COPTS ?= -g$/;"	m
+DEAD_INSTANCE	twokeymap/main.cpp	/^        DEAD_INSTANCE = 0xDEAD$/;"	e	enum:KeyKlass::__anon1	file:
+DIRS	Makefile	/^DIRS =  macros \\$/;"	m
+EXECUTABLE	readfile/Makefile	/^EXECUTABLE=readfile$/;"	m
+EXECUTABLE	tree/Makefile	/^EXECUTABLE=main$/;"	m
+EnumT	macros/macros.cpp	/^} EnumT;$/;"	t	typeref:enum:Enum_e	file:
+Enum_e	macros/macros.cpp	/^typedef enum Enum_e$/;"	g	file:
+FooBar	memory/main.cpp	/^   FooBar()$/;"	f	class:FooBar
+FooBar	memory/main.cpp	/^   FooBar(const FooBar& orig)$/;"	f	class:FooBar
+FooBar	memory/main.cpp	/^class FooBar $/;"	c	file:
+GET_TYPE	macros/macros.cpp	12;"	d	file:
+HEADERS	readfile/Makefile	/^HEADERS=$/;"	m
+HEADERS	tree/Makefile	/^HEADERS=$(*.h)$/;"	m
+IN_ORDER	tree/treetype.h	/^    IN_ORDER,$/;"	e	enum:OrderType
+KeyKlass	twokeymap/main.cpp	/^    KeyKlass(const int key1, const int key2)$/;"	f	class:KeyKlass
+KeyKlass	twokeymap/main.cpp	/^class KeyKlass$/;"	c	file:
+LDFLAGS	readfile/Makefile	/^LDFLAGS=$/;"	m
+LDFLAGS	tree/Makefile	/^LDFLAGS=$/;"	m
+MAGIC_NUMBER	twokeymap/main.cpp	/^        MAGIC_NUMBER = 0x4200CAFE,$/;"	e	enum:KeyKlass::__anon1	file:
+MAXEVENTS	epoll/main.cpp	12;"	d	file:
+OBJECT	bitfield/Makefile	/^OBJECT = bitfield$/;"	m
+OBJECT	endian/Makefile	/^OBJECT = main$/;"	m
+OBJECT	epoll/Makefile	/^OBJECT = main$/;"	m
+OBJECT	macros/Makefile	/^OBJECT = macros$/;"	m
+OBJECT	memory/Makefile	/^OBJECT = main$/;"	m
+OBJECT	random_number_gen/Makefile	/^OBJECT = random_number_gen$/;"	m
+OBJECT	reverseString/Makefile	/^OBJECT = main$/;"	m
+OBJECT	stl_map/Makefile	/^OBJECT = smap$/;"	m
+OBJECT	strcopy/Makefile	/^OBJECT = main$/;"	m
+OBJECT	time/Makefile	/^OBJECT = main$/;"	m
+OBJECT	twokeymap/Makefile	/^OBJECT = main$/;"	m
+OBJECTS	readfile/Makefile	/^OBJECTS=$(SOURCES:.cpp=.o)$/;"	m
+OBJECTS	tree/Makefile	/^OBJECTS=$(SOURCES:.cpp=.o)$/;"	m
+OrderType	tree/treetype.h	/^enum OrderType {$/;"	g
+POST_ORDER	tree/treetype.h	/^    POST_ORDER$/;"	e	enum:OrderType
+PRE_ORDER	tree/treetype.h	/^    PRE_ORDER,$/;"	e	enum:OrderType
+SAFE_DELETE	memory/main.cpp	45;"	d	file:
+SOURCES	readfile/Makefile	/^SOURCES=readfile.cpp main.cpp$/;"	m
+SOURCES	tree/Makefile	/^SOURCES=main.cpp treetype.cpp $/;"	m
+TREETYPE_H	tree/treetype.h	9;"	d
+TreeNode	tree/treetype.h	/^    struct TreeNode {$/;"	s	class:TreeType
+TreeType	tree/treetype.cpp	/^TreeType::TreeType(){$/;"	f	class:TreeType
+TreeType	tree/treetype.h	/^class TreeType$/;"	c
+Type1	macros/macros.cpp	/^   Type1 = 0,$/;"	e	enum:Enum_e	file:
+Type2	macros/macros.cpp	/^   Type2,$/;"	e	enum:Enum_e	file:
+Type3	macros/macros.cpp	/^   Type3$/;"	e	enum:Enum_e	file:
+buf	memory/main.cpp	/^   char buf[500];$/;"	m	class:FooBar	file:
+chararrays	memory/main.cpp	/^const char * chararrays[] = {"one", "two", "three", NULL};$/;"	v
+countNodes	tree/treetype.cpp	/^int TreeType::countNodes(TreeNode * node)$/;"	f	class:TreeType
+create_and_bind	epoll/main.cpp	/^static int create_and_bind(char *port) $/;"	f	file:
+current_getch	curses/curses.c	/^int current_getch;$/;"	v
+doloop	curses/curses.c	/^int doloop = 1;$/;"	v
+getKey	twokeymap/main.cpp	/^    uint8_t * getKey() {return twoKey;}$/;"	f	class:KeyKlass
+getKey1	twokeymap/main.cpp	/^    uint8_t getKey1() {return twoKey[0];}$/;"	f	class:KeyKlass
+getKey2	twokeymap/main.cpp	/^    uint8_t getKey2() {return twoKey[1];}$/;"	f	class:KeyKlass
+getMoreChars	memory/main.cpp	/^const char * getMoreChars(int idx)$/;"	f
+getName	twokeymap/main.cpp	/^    string getName(void) {return name_m;}$/;"	f	class:klass
+info	tree/treetype.h	/^        int info;$/;"	m	struct:TreeType::TreeNode
+insertItem	tree/treetype.cpp	/^void TreeType::insertItem(TreeNode* & node, int item)$/;"	f	class:TreeType
+insertItem	tree/treetype.cpp	/^void TreeType::insertItem(int item)$/;"	f	class:TreeType
+klass	twokeymap/main.cpp	/^class klass$/;"	c	file:
+klass	twokeymap/main.cpp	/^klass::klass(const string name)$/;"	f	class:klass
+left	tree/treetype.h	/^        TreeNode* left;$/;"	m	struct:TreeType::TreeNode
+main	bitfield/bitfield.cpp	/^int main(int argc, char ** argv)$/;"	f
+main	curses/curses.c	/^int main(void) {$/;"	f
+main	endian/main.cpp	/^ main(int argc, char *argv[])$/;"	f
+main	epoll/main.cpp	/^int main(int argc, char *argv[])$/;"	f
+main	macros/macros.cpp	/^int main(int argc, char ** argv)$/;"	f
+main	memory/main.cpp	/^int main(int argc, char ** argv)$/;"	f
+main	random_number_gen/random_number_gen.cpp	/^int main(int argc, char ** argv)$/;"	f
+main	readfile/main.cpp	/^int main(int argc, char ** argv)$/;"	f
+main	reverseString/main.cpp	/^int main(int argc, char ** argv)$/;"	f
+main	stl_map/smap.cpp	/^int main(int argc, char** argv) {$/;"	f
+main	strcopy/main.cpp	/^int main()$/;"	f
+main	time/main.cpp	/^int main(int argc, char ** argv)$/;"	f
+main	tree/main.cpp	/^int main()$/;"	f
+main	twokeymap/main.cpp	/^int main(int argc, char ** argv)$/;"	f
+mainwnd	curses/curses.c	/^static WINDOW *mainwnd;$/;"	v	file:
+make_socket_non_blocking	epoll/main.cpp	/^static int make_socket_non_blocking(int sfd)$/;"	f	file:
+maketime	curses/curses.c	/^void maketime(void) {$/;"	f
+myMagic	twokeymap/main.cpp	/^    int64_t myMagic;$/;"	m	class:KeyKlass	file:
+my_win	curses/curses.c	/^WINDOW *my_win;$/;"	v
+name_m	twokeymap/main.cpp	/^    string name_m;$/;"	m	class:klass	file:
+now	curses/curses.c	/^time_t now;$/;"	v
+now_day	curses/curses.c	/^int now_sec, now_min, now_hour, now_day, now_wday, now_month, now_year;$/;"	v
+now_hour	curses/curses.c	/^int now_sec, now_min, now_hour, now_day, now_wday, now_month, now_year;$/;"	v
+now_min	curses/curses.c	/^int now_sec, now_min, now_hour, now_day, now_wday, now_month, now_year;$/;"	v
+now_month	curses/curses.c	/^int now_sec, now_min, now_hour, now_day, now_wday, now_month, now_year;$/;"	v
+now_sec	curses/curses.c	/^int now_sec, now_min, now_hour, now_day, now_wday, now_month, now_year;$/;"	v
+now_tm	curses/curses.c	/^struct tm *now_tm;$/;"	v	typeref:struct:tm
+now_wday	curses/curses.c	/^int now_sec, now_min, now_hour, now_day, now_wday, now_month, now_year;$/;"	v
+now_year	curses/curses.c	/^int now_sec, now_min, now_hour, now_day, now_wday, now_month, now_year;$/;"	v
+numberOfNodes	tree/treetype.cpp	/^int TreeType::numberOfNodes()$/;"	f	class:TreeType
+operator <	twokeymap/main.cpp	/^bool operator<(KeyKlass key1a, KeyKlass key1b)$/;"	f
+ptrTest	reverseString/main.cpp	/^void ptrTest()$/;"	f
+readfilelibc	readfile/readfile.cpp	/^int readfilelibc(string fileName)$/;"	f
+readfileposix	readfile/readfile.cpp	/^int readfileposix(string fileName)$/;"	f
+reverse	reverseString/main.cpp	/^char * reverse(char *str)$/;"	f
+right	tree/treetype.h	/^        TreeNode* right;$/;"	m	struct:TreeType::TreeNode
+root	tree/treetype.h	/^    TreeNode * root;$/;"	m	class:TreeType
+screen	curses/curses.c	/^static WINDOW *screen;$/;"	v	file:
+screen_end	curses/curses.c	/^void screen_end(void) {$/;"	f
+screen_init	curses/curses.c	/^void screen_init(void) {$/;"	f
+strcopy	strcopy/main.cpp	/^char * strcopy(char * StringIn)$/;"	f
+twoKey	twokeymap/main.cpp	/^    uint8_t twoKey[2];$/;"	m	class:KeyKlass	file:
+update_display	curses/curses.c	/^static void update_display(void) {$/;"	f	file:
+var	memory/main.cpp	/^int var = 0;$/;"	v
+varLessThan5	memory/main.cpp	/^bool varLessThan5()$/;"	f
+~FooBar	memory/main.cpp	/^   ~FooBar()$/;"	f	class:FooBar
+~KeyKlass	twokeymap/main.cpp	/^    ~KeyKlass()$/;"	f	class:KeyKlass
+~TreeType	tree/treetype.cpp	/^TreeType::~TreeType(){$/;"	f	class:TreeType

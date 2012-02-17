@@ -1,0 +1,26 @@
+Index: qt4reactor.py
+===================================================================
+--- qt4reactor.py	(revision 283)
++++ qt4reactor.py	(working copy)
+@@ -22,8 +22,8 @@
+ __all__ = ['install']
+ 
+ # System Imports
+-from PyQt4.QtCore import QSocketNotifier, QObject, SIGNAL, QTimer
+-from PyQt4.QtGui import QApplication
++from PySide.QtCore import QSocketNotifier, QObject, SIGNAL, QTimer
++from PySide.QtGui import QApplication
+ import sys
+ 
+ # Twisted Imports
+Index: signals.py
+===================================================================
+--- signals.py	(revision 283)
++++ signals.py	(working copy)
+@@ -1,5 +1,5 @@
+ import sys
+-from PyQt4 import QtGui, QtCore
++from PySide import QtGui, QtCore
+ from qt4reactor import install
+ from qt4reactor import QTReactor
+ #from twisted.internet import reactor

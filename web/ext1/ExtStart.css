@@ -1,0 +1,61 @@
+
+h1 {
+    font-family: Georgia, "Times New Roman", Times,serif;
+    font-size:26px;
+    color:#083772;
+    letter-spacing:-1px;
+    font-weight:normal;
+    background:#eee;
+    padding:15px 20px;
+    border-bottom:1px solid #ccc;
+}
+
+
+body {
+    font:75% georgia, sans-serif;
+    line-height:1.88889;
+    color:#555753;
+    /*background:#fff url(blossoms.jpg) no-repeat bottom right;*/
+    margin:0;
+    padding:0;
+}
+
+h3 {
+	font: italic normal 1.4em georgia, sans-serif;
+	letter-spacing: 1px;
+	margin-bottom: 0;
+	color: #7D775C;
+	}
+h2 {
+    font-size: 18px;
+    line-height: 18px;
+    color:#083772;
+    margin-bottom:15px;
+    font-weight:normal;
+}
+
+p {
+    margin:10px 20px;
+    line-height:18px;
+}
+
+input {
+    margin:8px 20px;
+}
+
+#content {
+    margin-left:15px;
+}
+
+#myDiv{
+    border:2px solid #1F3E75;
+    background:#DFECFB;
+    margin:20px 50px;
+    padding:10px 20px;
+    width:200px;
+    text-align:center;
+}
+
+.red{
+    color: red;
+}

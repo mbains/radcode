@@ -1,0 +1,94 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+        <link rel="stylesheet" type="text/css" href="/ext/resources/css/ext-all.css" />
+        <script type="text/javascript" src="/ext/adapter/ext/ext-base.js"></script>
+        <script type="text/javascript" src="/ext/ext-all-debug.js"></script>
+
+  </head>
+  <body>
+    <script type="text/javascript">
+        function ReadyFunc() {
+            var languageStore = new Ext.data.ArrayStore({
+                fields: ['id', 'language'] ,
+                data: [['1', 'C++'], ['2', 'Java'], ['3', 'Python'], ['4', 'Insert New Language'],],
+                id: 'theLangStore'
+                });
+            Ext.QuickTips.init();
+            new Ext.FormPanel({
+                renderTo: document.body,
+                frame: true,
+                title: "Form Title",
+                width: 250,
+                items: [{
+                        xtype: 'textfield',
+                        fieldLabel: 'TextField1',
+                        name: 'TextField1 Title',
+                        width: 100,
+                        allowBlank: false,
+                        minLength: 8,
+                        minLengthText: "Text Length < 8", 
+                        tabTip: "A number less than 8",
+                        listeners: {
+                            specialkey: function(field, eventObject){
+                                if(eventObject.getKey() == eventObject.ENTER){
+                                    Ext.MessageBox.alert("Alert Title", "you clicked Enter");
+                                }
+                            }
+                        }
+                    }, {
+                        xtype: 'textfield',
+                        fieldLabel: 'TextField2',
+                        name: 'TextField2 Title',
+                        width: 100,
+                        vtype: 'alpha',
+                        emptyText: 'alpha chars only'
+                    }, {
+                        xtype: 'combo',
+                        name: 'language',
+                        id: 'lang-combo',
+                        fieldLabel: 'language',
+                        mode: 'local',
+                        store: languageStore,
+                        displayField: 'language',
+                        width: 120,
+                        listeners: {
+                            select: function(f,r,i){
+                                if(i==languageStore.getCount()-1){
+                                    var l =10;
+                                    Ext.MessageBox.prompt('new language', 'name', function(btn,txt){
+                                        var comboBox = Ext.getCmp('lang-combo')
+                                        var size = languageStore.getCount();
+                                        var newRecord = new languageStore.recordType({
+                                                id: size,
+                                                language: txt
+                                        });
+                                        languageStore.insert(0, newRecord);
+                                        comboBox.setValue(txt);
+                                    });
+                                }
+                            }
+
+                        }
+
+                    }, {
+                        xtype: 'datefield',
+                        fieldLabel: 'datefield',
+                        name: "datefield name",
+                        disabledDays: [7,1],
+                        disabledDaysText: "Weekends are disabled"
+
+                }]
+            });
+        }
+        Ext.onReady(ReadyFunc);
+    </script>
+  </body>
+</html>

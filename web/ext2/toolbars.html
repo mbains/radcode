@@ -1,0 +1,66 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" type="text/css" href="/ext/resources/css/ext-all.css" />
+        <script type="text/javascript" src="/ext/adapter/ext/ext-base.js"></script>
+        <script type="text/javascript" src="/ext/ext-all-debug.js"></script>
+
+        <script type="text/javascript">
+            function ReadyFunc() {
+                var tb = new Ext.Toolbar({
+                   renderTo: document.body,
+                   items: [{
+                            xtype: 'button',
+                            text: 'Button',
+                            cls: '.x-btn-text-icon',
+                            icon: 'icon.png',
+                            handler: function(btn) {
+                                Ext.MessageBox.alert("button", "clicked");
+                                btn.disable();
+                            }
+
+                    },{
+                            xtype: 'tbfill'
+                    },{
+                            xtype: 'button',
+                            text: 'Menu Button',
+                            menu: [{
+                                    text: 'better',
+                                    checked: true
+                            }, {
+                                    text: 'good',
+                                    checked: false
+                            }, {
+                                    text: 'best',
+                                    checked: false
+                            }]
+
+                   },{
+                            xtype: 'tbseparator'
+                   },{
+                            xtype: 'tbspacer'
+                   },{
+                            xtype: 'splitbutton',
+                            text: 'Split Button',
+                            menu: [{
+                                    text: 'Item One'
+                            },{
+                                    text: 'Item Two'
+                            },{
+                                    text: 'Item Three'
+                            }]
+                   }]
+                });
+            }
+            Ext.onReady(ReadyFunc);
+        </script>
+  </head>
+  <body>
+  </body>
+</html>

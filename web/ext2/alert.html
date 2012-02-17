@@ -1,0 +1,57 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+        <link rel="stylesheet" type="text/css" href="/ext/resources/css/ext-all.css" />
+        <script type="text/javascript" src="/ext/adapter/ext/ext-base.js"></script>
+        <script type="text/javascript" src="/ext/ext-all-debug.js"></script>
+
+  <style type="text/css">
+      .tux_icon {
+          background: url(tux_small.jpg) no-repeat;
+      }
+    </style>
+  </head>
+  <body>
+    <script type="text/javascript">
+        Ext.MessageBox.show({
+            title: "Hello World!",
+            msg: "Tux greets you.",
+            buttons: {
+                yes: true,
+                no: true,
+                cancel: true
+            },
+            icon: 'tux_icon',
+            closable: false,
+            fn: function(btnId) {
+                switch(btnId)
+                {
+                    case 'yes':
+                        Ext.MessageBox.alert('Alert!', 'Case 1: you clicked ');
+                        Ext.get('my_id').dom.innerHTML = "Dull work";
+                    break;
+                    case 'no':
+                        Ext.MessageBox.alert(   'Alert!',
+                                                'Case2: you clicked ' + btnId,
+                                                function() {
+                                                    Ext.DomHelper.applyStyles('my_id', {'background': 'transparent \n\
+                                                    url(tux_small.jpg) 0 100% repeat-x'})
+                                                });
+
+                    break;
+                    case 'cancel':
+                        Ext.MessageBox.wait("Waiting", "Wait Title");
+                }
+            }
+        });
+    </script>
+      <div id="my_id" style="width:200px;height:200px"> test </div>
+  </body>
+</html>

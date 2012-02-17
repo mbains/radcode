@@ -1,0 +1,1 @@
+~/workspace/dmalloc-5.5.2/dmalloc high -i 100 -l logfile -p check-heap -p check-fence

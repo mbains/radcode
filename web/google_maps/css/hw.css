@@ -1,0 +1,29 @@
+/* 
+    Document   : hw
+    Created on : Oct 20, 2010, 2:04:01 PM
+    Author     : bains
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+html {
+    height: 100%;
+}
+body {
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+#text_div {
+    background: yellow;
+}
+#map_canvas {
+  height: 100%;
+  width: 100%;
+  border: 4px solid #000;
+}

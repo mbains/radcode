@@ -1,0 +1,11 @@
+-i/usr/include/c++/4.5/
+//-i/usr/include/c++/4.5/i686-linux-gnu/
+//-i/usr/include/bits/
+-i/usr/include
+//-i/usr/lib/i386-linux-gnu/gcc/i686-linux-gnu/4.5.2/include/
+-cgnu
++cpp
+-elib(322)
+-e451
+-esym(129,GLIBCXX_END_NAMESPACE)
+-e129

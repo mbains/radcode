@@ -1,0 +1,61 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script type="text/javascript" src="../jquery-1.4.2.js"></script>
+        <link rel="stylesheet" href="css/accordian.css" />
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $('.acc_container').hide();
+                $('.acc_trigger:first').addClass('active').next().show();
+                $('.acc_trigger').click(function() {
+                    if( $(this).next().is(':hidden')) {
+                        $('.acc_trigger').removeClass('active').next().slideUp();
+                        $(this).toggleClass('active').next.slideDown();
+                    }
+                    return false;
+                });
+            });
+        </script>
+        
+    </head>
+    <body>
+        <h2 class="acc_trigger"><a href="#">Yahoo</a>
+        </h2>
+        <div class="acc_container"> 
+             <div class="block">
+                 <h3>Yahoo</h3>
+                 <a href="http://www.yahoo.com"></a>
+                 <p>
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, .
+                    when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+                    It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. 
+                    It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, 
+                    and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                 </p>
+            </div>
+        </div>
+        <h2 class="acc_trigger"><a href="#">Google<</a></h2>
+        <div class="acc_container"> 
+             <div class="block">
+                 <h3>Yahoo</h3>
+                 <a href="http://www.google.com"></a>
+                 <p>
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, .
+                    when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+                    It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. 
+                    It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, 
+                    and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                 </p>
+            </div>
+        </div>
+        
+    </body>
+</html>
