@@ -1,0 +1,44 @@
+# project noname (1.0) configured on Tue May  8 15:59:53 2012 by
+# waf 1.5.16 (abi 7, python 20702f0 on linux2)
+# using /home/mbai/ppd/server/nodejs/bin/node-waf configure
+#
+
+----------------------------------------
+Setting srcdir to
+/home/mbai/radcode/web/node/helloworld_binding
+
+----------------------------------------
+Setting blddir to
+/home/mbai/radcode/web/node/helloworld_binding/build
+
+----------------------------------------
+Checking for program g++ or c++
+  find program=['g++', 'c++'] paths=[] var='CXX'
+  -> '/usr/bin/g++'
+
+----------------------------------------
+Checking for program cpp
+  find program=['cpp'] paths=[] var='CPP'
+  -> '/usr/bin/cpp'
+
+----------------------------------------
+Checking for program ar
+  find program=['ar'] paths=[] var='AR'
+  -> '/usr/bin/ar'
+
+----------------------------------------
+Checking for program ranlib
+  find program=['ranlib'] paths=[] var='RANLIB'
+  -> '/usr/bin/ranlib'
+
+----------------------------------------
+Checking for g++ 
+ok 
+
+----------------------------------------
+Checking for node path 
+ok /home/mbai/ppd/server/nodejs/lib/node_modules
+
+----------------------------------------
+Checking for node prefix 
+ok /home/mbai/ppd/server/nodejs
