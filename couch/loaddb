@@ -1,0 +1,4 @@
+#!/bin/bash
+curl -X PUT --data @design.json -H "Content-Type:application/json" http://localhost:5984/grocer/_design/example
+curl -X PUT --data @apples.json -H "Content-Type:application/json" http://localhost:5984/grocer/apples
+curl -X PUT --data @oranges.json -H "Content-Type:application/json" http://localhost:5984/grocer/oranges

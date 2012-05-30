@@ -1,0 +1,9 @@
+{
+    "item": "orange",
+    "prices": {
+        "Fresh Mart": 1.30,
+        "Price Max": 5.99,
+        "Apple Express": 0.99
+    },
+    "type": 'fruit'
+}
