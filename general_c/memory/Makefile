@@ -3,7 +3,7 @@ OBJECT = main
 CC = g++
 COPTS ?= -g
 
-LIBS = libdmallocthcxx.a
+LIBS = 
 
 all : $(OBJECT)
 

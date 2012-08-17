@@ -13,7 +13,7 @@ public:
    char buf[500];
    FooBar()
    {
-      printf("constructor called, address of buf = 0x%08x \n", (unsigned int) buf);
+      printf("constructor called, address of buf = 0x%08x \n",  buf);
    }
    ~FooBar()
    {
@@ -21,7 +21,7 @@ public:
    }
    FooBar(const FooBar& orig)
    {
-      printf("copy constructor called, 0x%08x, address of buf = 0x%08x \n", (unsigned int)&orig, (unsigned int) buf);
+      printf("copy constructor called, 0x%08x, address of buf = 0x%08x \n", &orig, buf);
    }
 };
 
@@ -29,7 +29,7 @@ int var = 0;
 bool varLessThan5()
 {
    var ++;
-   if (var >= 5)
+   if (var > 5)
       return false;
 
    return true;
@@ -63,7 +63,7 @@ int main(int argc, char ** argv)
    }
 
     FooBar bar = FooBar();
-    //FooBar foo(bar);
+    FooBar foo(bar);
     printf("value of uninitialized buffer inside statically allocated instance: [%s]\n", bar.buf);
 
     char someStrings[5][4]= {"jo", "ho", "doe", "foe", "moe"};
@@ -71,20 +71,12 @@ int main(int argc, char ** argv)
 
     ints1[0] = new int(10);
     ints1[1] = new int(20);
-   
-    ints[0] = 42;
-    printf("normal %d\n", ints[0]);
+
     SAFE_DELETE(integer); //demo safe delete
     SAFE_DELETE(integer);
     SAFE_DELETE(integer);
-    sleep(2);
-    //printf("fence post %d\n", ints[6]);
-    sleep(3);
+
     delete [] ints; //delete group
-    printf("after delete %d\n", ints[0]);
-    sleep(3);
-    printf("writing to freed memory\n");
-    ints[1]=30;
     delete ints1[0]; //have to delete seperately
     delete ints1[1];
     return 0;
