@@ -22,12 +22,33 @@ class I2CDevice(object):
         dev.Write(self.readAddress)
         if dev.GetAck() != ACK:
             raise Exception("(%s) Ack failed after read register write" % dev.GetDescription())
-        dev.SetAck(1)
+        #dev.SetAck(1)
+        dev.SendNacks() #SetAck(1) is really SendNacks
         data = dev.Read(length)
+
+        #dev.SendNacks() #why sent nacks again?
+        dev.Stop()
+        return data
+
+    def readMultiple(self, reg, length):
+
+        data = ''
+        self.pointToDevRegister(reg)
+        dev = self.device
+        dev.Start()
+        dev.Write(self.readAddress)
+        if dev.GetAck() != ACK:
+            raise Exception("(%s) Ack failed after read register write" % dev.GetDescription())
+        #dev.SetAck(1)
+        while (len(data) < length):
+
+            dev.SendAcks()
+            data += dev.Read(1)
 
         dev.SendNacks()
         dev.Stop()
         return data
+
 
 
     def writeTo(self, register, value):
