@@ -52,10 +52,10 @@ class I2CDevice(object):
 if __name__ == '__main__':
     i2c = I2CDevice(0x53)
     print "reg 0: %r" % i2c.readFrom(0, 1)
-    print "reg 0x1d: %r" % i2c.readFrom(0x1d, 1)
-    print "writing to 0x1d"
-    i2c.writeTo(0x1d, 10)
-    print "reg 0x1d: %r" % i2c.readFrom(0x1d, 1)
+    print "reg 0x1e: %r" % i2c.readFrom(0x1e, 1)
+    print "writing to 0x1e"
+    i2c.writeTo(0x1e, 3)
+    print "reg 0x1e: %r" % i2c.readFrom(0x1e, 1)
 
 
 
