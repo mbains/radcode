@@ -16,6 +16,9 @@ class MrfRxStatus(object):
     def rx_datalength(self):
         return self.frame_length - Mrf24j40.BYTES_OVERHEAD
 
+    def __str__(self):
+        return "rx_data: %s, lqi :%s, rssi:%s" % (self.rx_data.tostring(), self.lqi, self.rssi)
+
 class MrfTxStatus(object):
     def __init__(self):
         self.success = None
@@ -242,6 +245,11 @@ class Mrf24j40(object):
         self.write_short(self.MRF_SADRH, address >> 8)
         self.write_short(self.MRF_SADRL, address & 0xFF)
 
+    def set_promiscuous(self, enabled):
+        bit = 1 if enabled else 0
+        self.write_short(self.MRF_RXMCR, bit);
+
+
     def interrupt_handler(self):
         last_interrupt = self.read_short(self.MRF_INTSTAT)
         if last_interrupt & self.MRF_I_RXIF:
@@ -279,15 +287,16 @@ class Mrf24j40(object):
 if __name__=='__main__':
    mrf = Mrf24j40()
    mrf.setpan(0xcafe)
-   mrf.set_short_addr(0x6001)
+   mrf.set_short_addr(0x100)
    len_last = -1
+   mrf.set_promiscuous(True)
    while True:
       #time.sleep(0.1)
       #no interrupts, poll for now
       mrf.interrupt_handler()
       QLen = len(mrf.rxStatusQueue)
-      if len_last ^ QLen:
-          print QLen
+      if QLen and (len_last ^ QLen):
+          print QLen, mrf.rxStatusQueue[-1]
           len_last = QLen
       #for msg in mrf.rxStatusQueue:
       #    print msg.rx_data.tostring()
