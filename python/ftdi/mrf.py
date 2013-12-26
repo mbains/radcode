@@ -220,6 +220,17 @@ class Mrf24j40(object):
         self.mp.Stop()
         return struct.unpack('B', data)[0]
 
+    def read_long_bytes(self, address, count):
+        ''' For reading packets, the MRF can continue to send frame while
+        incrementing the address'''
+        data = array('B')
+        self.mp.Start()
+        addr_tx = (((1 << 11) | (address << 1)) << 4);
+        self.mp.Write(struct.pack('>H', addr_tx))
+        data.fromstring(self.mp.Read(count))
+        self.mp.Stop()
+        return data
+
     def set_channel(self, channel):
         self.write_long(self.MRF_RFCON0, (((channel - 11) << 4) | 0x03))
 
@@ -263,9 +274,7 @@ class Mrf24j40(object):
                     self.rx_buf.append(self.read_long(0x301 + idx))
 
             #buffer data
-            # from (0x301 + bytes_MHR) to (0x301 + frame_length - bytes_nodata - 1)
-            for idx in xrange(rx_info.rx_datalength()):
-                rx_info.rx_data.append(self.read_long(0x301 + self.BYTES_MHR + idx))
+            rx_info.rx_data = self.read_long_bytes(0x301 + self.BYTES_MHR, rx_info.rx_datalength())
 
             rx_info.lqi = self.read_long(0x301 + rx_info.frame_length)
             rx_info.rssi = self.read_long(0x301 + rx_info.frame_length + 1)
