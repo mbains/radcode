@@ -9,6 +9,7 @@ DIRS =  macros \
 	strcopy \
 	epoll \
 	readfile \
+	factory \
 
 
 .PHONY: dirs $(DIRS)

@@ -56,13 +56,13 @@ void ptrTest()
 {
     int intarray[5] = {1,2,3,4,5};
     int * intptr = intarray;
-    printf("address pointed = 0x%08x\n", (unsigned int) intptr);
+    printf("address pointed = 0x%p\n", intptr);
     for(int i = 0; i < 5; i++)
     {
-        printf("i = %d, address pointed = 0x%08x, value = %d\n", i, (unsigned int) intptr, *intptr);
+        printf("i = %d, address pointed = 0x%p, value = %d\n", i, intptr, *intptr);
         intptr++;
     }
-    printf("size of int %d, size of int * %d", sizeof(*intptr), sizeof(intptr));
+    printf("size of int %lu, size of int * %lu", sizeof(*intptr), sizeof(intptr));
 }
 
 int main(int argc, char ** argv)
