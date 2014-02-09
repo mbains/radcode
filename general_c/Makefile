@@ -10,6 +10,7 @@ DIRS =  macros \
 	epoll \
 	readfile \
 	factory \
+	references_and_types \
 
 
 .PHONY: dirs $(DIRS)
