@@ -1,6 +1,6 @@
 CC=g++
 .SUFFIXES: .cpp .o
-CFLAGS=-O0 -Wall -g3 -c -fmessage-length=0 -Wno-unused-variable -std=c++11
+CFLAGS=-O0 -Wall -g3 -c -fmessage-length=0 -Wno-unused-variable -std=c++0x
 LDFLAGS=
 SOURCES=main.cpp
 OBJECTS=$(SOURCES:.cpp=.o)
