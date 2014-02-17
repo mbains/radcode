@@ -8,8 +8,18 @@
 #include <cstdlib>
 #include <iostream>
 
-
+ 
 using namespace std;
+
+/* returns just a  string*/
+string str_function() {
+    return string("testing");
+}
+
+/* Multiply at compile time using constant expressions! */
+constexpr  int fast_multiply(int x, int y) {
+    return x*y;
+}
 
 /*
  * 
@@ -47,9 +57,14 @@ int main(int argc, char * argv[]) {
 
     
     auto v_auto = "a string";
-
     cout << v_auto << endl;
+    
+    constexpr int cexp = fast_multiply(7,7);
+    cout << "fast_multiply(7,7)= " << cexp << endl;
 
+    decltype(str_function()) x;
+    x = v_auto;
+    cout << "x also is " << x << endl;
     return 0;
 }
 
