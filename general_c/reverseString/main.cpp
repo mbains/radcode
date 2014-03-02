@@ -6,6 +6,24 @@
 
 using namespace std;
 
+void reverseStringIterative(char * str)
+{
+    int size = 0; 
+    char *tmp = str;
+    
+    while(*tmp)
+        tmp++;
+    
+    size = tmp-str-1;
+    for(int i = 0; i < size; i++) {
+        if( (size/(float)i) <= 2)
+            break;
+        char temp_c = str[i];
+        str[i] = str[size-i];
+        str[size-i] = temp_c;
+    }
+}
+
 char * reverse(char *str)
 {
     int strSize = 1;
@@ -67,9 +85,9 @@ void ptrTest()
 
 int main(int argc, char ** argv)
 {
-    char dataS[20] = "This is a string";
 
-    cout << reverse(dataS) << endl;
+    reverseStringIterative(argv[1]);
+    cout << argv[1] << endl;
     return 0;
 }
 
