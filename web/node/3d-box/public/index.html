@@ -16,9 +16,22 @@
             });
             socket.on('rotate', function(coord_s) {
                 var coords = coord_s.split(',');
-                cube.rotation.x = coords[0];
-                cube.rotation.y = coords[1];
-                cube.rotation.z = coords[2];
+                var x, 
+                    y, 
+                    z;
+                x = coords[0]/2000.;
+                y = coords[1]/2000.;
+                z = coords[2]/2000.;
+                var margin = 0.08;
+                if(Math.abs(x - cube.rotation.x) > margin) {
+                    cube.rotation.x = x;
+                }
+                if(Math.abs(y - cube.rotation.y) > margin) {
+                    cube.rotation.y = y;
+                }
+                if(Math.abs(z - cube.rotation.z) > margin) {
+                    cube.rotation.z = z;
+                }
             });
 
 
