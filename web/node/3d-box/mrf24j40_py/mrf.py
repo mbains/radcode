@@ -302,29 +302,18 @@ class Mrf24j40(object):
             
 
 if __name__ == '__main__':
-    pipename = '/tmp/wiresharkpipe'
-    #os.system('rm -f ' + pipename)
-    try:
-        os.mkfifo(pipename) #default mode 0666 (octal)
-    except OSError, e:
-        if e.errno != errno.EEXIST:    
-            print "Failed to create FIFO: %s" % e
-            sys.exit(-1)
-            
-    rcode = os.fork()
-    if rcode == 0:
-        os.execlp('wireshark', 'wireshark', '-k', '-i', pipename)
+           
 
-    dumper = PcapDumper(195, pipename)
-    mrf = Mrf24j40(True, int(sys.argv[-1]))
+
+    mrf = Mrf24j40(False, int(sys.argv[-1]))
     mrf.setpan(0xcafe)
     mrf.set_short_addr(0x6001)
     
-    HOST = 'localhost'  
+    HOST = '192.168.2.106'
     PORT = 8124        
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     s.connect((HOST, PORT))
-
+    print "connected"
     try:
         while True:
             #time.sleep(0.1)
@@ -333,8 +322,8 @@ if __name__ == '__main__':
             QLen = len(mrf.rxStatusQueue)
             if QLen:
                 pkt = mrf.rxStatusQueue.pop(0)
-                print pkt
-                s.sendall(pkt.data.tostring())
+                print "pkt:", len(pkt.rx_data)
+                s.sendall(pkt.rx_data.tostring())
 
     except KeyboardInterrupt, e:
         dumper.close()
