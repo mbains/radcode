@@ -1,12 +1,12 @@
 
 #include "ring.h"
+#include <stdio.h>
 
 static void buf_reset(RingBuffer *buf);
 static int buf_len(RingBuffer *buf);
 static int buf_isfull(RingBuffer *buf);
 static int buf_isempty(RingBuffer *buf);
-static uint8_t buf_get_byte(RingBuffer *buf);
-static void buf_put_byte(RingBuffer *buf, uint8_t val);
+
 
 
 static void buf_reset(RingBuffer *buf)
@@ -33,29 +33,39 @@ static int buf_isempty(RingBuffer *buf)
     return buf->head == buf->tail;
 }
 
-static uint8_t buf_get_byte(RingBuffer *buf)
+uint8_t buf_get_byte(RingBuffer *buf)
 {
     uint8_t item;
     
     item = buf->data[buf->head++];
+    printf("head = %d\n", buf->head);
     if (buf->head == RINGBUF_SIZE)         // Wrap
+    {
+        printf("resetting head\n");
         buf->head = 0;
-        
+    }   
+    printf("get_byte: %d\n", item);
     return item;
 }
 
-static void buf_put_byte(RingBuffer *buf, uint8_t val)
+void buf_put_byte(RingBuffer *buf, uint8_t val)
 {
     
     buf->data[buf->tail++] = val;
-    if (buf->tail == RINGBUF_SIZE)
+    Printqueue(buf);
+    printf("tail = %d\n", buf->tail);
+    if (buf->tail == RINGBUF_SIZE) {
+        printf("resetting tail\n");
         buf->tail = 0;
+    }
 }
 
 int Enqueue(RingBuffer* buf, uint8_t data)
 {
-    if(buf_isfull(buf))
+    if(buf_isfull(buf)) {
+        printf("buf is full: %d\n", data);
         return 0;
+    }
     else {
         buf_put_byte(buf, data);
     }
@@ -64,10 +74,20 @@ int Enqueue(RingBuffer* buf, uint8_t data)
 
 int Dequeue(RingBuffer* buf, uint8_t *data)
 {
-    if(buf_isempty(buf))
-        return 0;
+    if(buf_isempty(buf)) {
+        printf("buf is empty\n");
+    }
     else {
         *data = buf_get_byte(buf);
     }
     return 1;
+}
+
+void Printqueue(RingBuffer *buf) 
+{
+    int tmp = buf->head;
+    while(tmp != buf->tail) {
+        printf("%d ", tmp++);
+    }
+    printf("\n");
 }

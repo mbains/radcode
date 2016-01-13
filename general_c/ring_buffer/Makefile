@@ -1,7 +1,7 @@
 CC=g++
 CFLAGS=-c -Wall -g
 LDFLAGS=
-SOURCES=main.cpp 
+SOURCES=main.cpp ring.c
 OBJECTS=$(SOURCES:.cpp=.o)
 HEADERS=$(*.h)
 EXECUTABLE=main

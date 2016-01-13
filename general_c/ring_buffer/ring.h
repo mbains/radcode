@@ -9,7 +9,7 @@
 #define	RING_H
 #include<stdint.h>
 
-#define RINGBUF_SIZE (8)
+#define RINGBUF_SIZE (4)
 
 typedef struct {
     volatile uint16_t head;
@@ -19,7 +19,11 @@ typedef struct {
 
 int Enqueue(RingBuffer *buf, uint8_t data);
 int Dequeue(RingBuffer *buf, uint8_t *data);
+void Printqueue(RingBuffer *buf);
 
+
+void buf_put_byte(RingBuffer *buf, uint8_t val);
+uint8_t buf_get_byte(RingBuffer *buf);
 #endif	/* RING_H */
 
 
