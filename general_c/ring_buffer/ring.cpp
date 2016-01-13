@@ -38,7 +38,7 @@ uint8_t buf_get_byte(RingBuffer *buf)
     uint8_t item;
     
     item = buf->data[buf->head++];
-    printf("head = %d\n", buf->head);
+    printf("get_byte: head = %d\n", buf->head);
     if (buf->head == RINGBUF_SIZE)         // Wrap
     {
         printf("resetting head\n");
@@ -52,8 +52,7 @@ void buf_put_byte(RingBuffer *buf, uint8_t val)
 {
     
     buf->data[buf->tail++] = val;
-    Printqueue(buf);
-    printf("tail = %d\n", buf->tail);
+    printf("put_byte: tail = %d\n", buf->tail);
     if (buf->tail == RINGBUF_SIZE) {
         printf("resetting tail\n");
         buf->tail = 0;
@@ -68,6 +67,7 @@ int Enqueue(RingBuffer* buf, uint8_t data)
     }
     else {
         buf_put_byte(buf, data);
+        printf("Enqueue: %d\n\n", data);
     }
     return 1;
 }
@@ -79,15 +79,17 @@ int Dequeue(RingBuffer* buf, uint8_t *data)
     }
     else {
         *data = buf_get_byte(buf);
+        printf("Dequeue: %d\n\n", *data);
     }
     return 1;
 }
 
 void Printqueue(RingBuffer *buf) 
 {
-    int tmp = buf->head;
-    while(tmp != buf->tail) {
-        printf("%d ", tmp++);
-    }
+//    int tmp = buf->head;
+    printf("Printqueue: head = %d, tail = %d", buf->head, buf->tail);
+//    while(tmp != buf->tail) {
+//        printf("%u ",  buf->data[tmp++%RINGBUF_SIZE]);
+//    }
     printf("\n");
 }

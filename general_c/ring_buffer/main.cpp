@@ -19,5 +19,17 @@ int main(int argc, char **argv) {
     Dequeue(&buf, &d);
     Dequeue(&buf, &d);
     
+    Enqueue(&buf, 10);
+    Enqueue(&buf, 11);
+    Enqueue(&buf, 12);
+    
+    Printqueue(&buf);
+    
+    Dequeue(&buf, &d);
+    Printqueue(&buf);
+    Dequeue(&buf, &d);
+    Printqueue(&buf);
+    
+    
     return 0;
 }
