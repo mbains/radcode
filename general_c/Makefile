@@ -11,7 +11,10 @@ DIRS =  macros \
 	readfile \
 	factory \
 	references_and_types \
-
+	union \
+	ring_buffer \
+	malloc \
+	tun \
 
 .PHONY: dirs $(DIRS)
 
