@@ -15,6 +15,7 @@ DIRS =  macros \
 	ring_buffer \
 	malloc \
 	tun \
+	token_parse_long \
 
 .PHONY: dirs $(DIRS)
 
