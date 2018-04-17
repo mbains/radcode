@@ -83,6 +83,7 @@ static void
 listener_cb(struct evconnlistener *listener, evutil_socket_t fd,
     struct sockaddr *sa, int socklen, void *user_data)
 {
+    printf("listener_cb called\n");
 	struct event_base *base = static_cast <event_base *>(user_data);
 	struct bufferevent *bev;
 
@@ -92,9 +93,12 @@ listener_cb(struct evconnlistener *listener, evutil_socket_t fd,
 		event_base_loopbreak(base);
 		return;
 	}
-	bufferevent_setcb(bev, conn_readcb, conn_writecb, conn_eventcb, NULL);
+    static int connection_num = 0;
+    int * copy_num = new int();
+    *copy_num = connection_num++;
+	bufferevent_setcb(bev, conn_readcb, conn_writecb, conn_eventcb, copy_num);
 	bufferevent_enable(bev, EV_WRITE);
-	bufferevent_disable(bev, EV_READ);
+	bufferevent_enable(bev, EV_READ);
 
 	bufferevent_write(bev, MESSAGE, strlen(MESSAGE));
 }
@@ -105,25 +109,32 @@ conn_writecb(struct bufferevent *bev, void *user_data)
 	struct evbuffer *output = bufferevent_get_output(bev);
 	if (evbuffer_get_length(output) == 0) {
 		printf("flushed answer\n");
-		bufferevent_free(bev);
+		//bufferevent_free(bev);
 	}
 }
 
 static void
 conn_readcb(struct bufferevent *bev, void *user_data)
 {
-	struct evbuffer *output = bufferevent_get_output(bev);
-	if (evbuffer_get_length(output) == 0) {
-		printf("flushed answer\n");
-		bufferevent_free(bev);
-	}
+    int count = 0;
+    int connection_num = *(static_cast<int *>(user_data));
+    printf("%d %s called\n", connection_num, __func__);
+
+    char c[512];
+    memset(c, 0, 512);
+    if((count = bufferevent_read(bev, c, 511)) > 0){
+        printf("read %d bytes %s\n", count, c);
+        bufferevent_write(bev, c, count);
+    }
 }
 
 static void
 conn_eventcb(struct bufferevent *bev, short events, void *user_data)
 {
 	if (events & BEV_EVENT_EOF) {
+        int * num = static_cast<int *> (user_data);
 		printf("Connection closed.\n");
+        delete num;
 	} else if (events & BEV_EVENT_ERROR) {
 		printf("Got an error on the connection: %s\n",
 		    strerror(errno));/*XXX win32*/
