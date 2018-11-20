@@ -4,7 +4,7 @@ from twisted.internet import reactor
 class UdpClient(DatagramProtocol):
 
     def doSend(self):
-        self.transport.connect("172.16.2.34", 40961)
+        self.transport.connect("127.0.0.1", 14550)
         self.transport.write("?")
 
     def datagramReceived(self, data, (host, port)):

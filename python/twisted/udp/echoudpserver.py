@@ -10,6 +10,6 @@ class Echo(DatagramProtocol):
         echoStr = ''.join(echoList)
         self.transport.write(echoStr, (host, port))
 
-reactor.listenUDP(40961, Echo())
+reactor.listenUDP(14550, Echo())
 reactor.run()
 

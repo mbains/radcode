@@ -5,29 +5,29 @@ class Echo(Protocol):
     total = 0
     def __init__(self):
 
-        print "Echo id: "
+        print("Echo id: ")
         self.numProtocols = 0
         Echo.total += 1
         self.id = Echo.total
 
         
     def connectionMade(self):
-        print "Client: connection made: ", self.id
+        print("Client: connection made: ", self.id)
 
     def connectionLost(self, reason):
-        print reason
+        print(reason)
 
     def dataReceived(self, data):
-        print "Client Got Data ", data
+        print("Client Got Data ", data)
 
     def __del__(self):
-        print "Gone"
+        print("Gone")
 
 if __name__ == '__main__':
     factory = ClientFactory()
     factory.protocol = Echo
 
-    for i in xrange(300):
-        reactor.connectTCP('172.16.2.208', 9877, factory)
+    for i in range(300):
+        reactor.connectTCP('localhost', 8007, factory)
     reactor.run()
     

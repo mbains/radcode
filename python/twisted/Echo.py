@@ -5,19 +5,19 @@ class Echo(Protocol):
     total = 0
     def __init__(self):
 
-        print "Echo"
+        print("Echo")
         self.numProtocols = 0
 
         
     def connectionMade(self):
-        print "connection made"
+        print("connection made")
         self.numProtocols = self.numProtocols+1
         if self.numProtocols > 100:
             self.transport.write("too many connections")
             self.transport.loseConnection()
 
     def connectionLost(self, reason):
-        print reason
+        print(reason)
 
     def dataReceived(self, data):
         Echo.total += 1
@@ -25,7 +25,7 @@ class Echo(Protocol):
         self.transport.loseConnection()
 
     def __del__(self):
-        print "Gone"
+        print("Gone")
 
 if __name__ == '__main__':
     factory = Factory()

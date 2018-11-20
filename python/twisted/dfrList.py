@@ -13,17 +13,17 @@ def doDfrList():
     reactor.callLater(3, callDfr, deferred3)
 
 def callDfr(dfr):
-    print "callDfr ", dfr
+    print("callDfr ", dfr)
     dfr.callback("pass")
 
 
 def errDfr(dfr):
-    print "errDfr ", dfr
+    print("errDfr ", dfr)
     dfr.errback(DefaultException("error"))
 
 
 def printResult(result):
-    print "Result: ", result
+    print("Result: ", result)
 
 
 if __name__ == "__main__":
