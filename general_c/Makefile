@@ -9,6 +9,7 @@ DIRS =  macros \
 	strcopy \
 	epoll \
 	readfile \
+	popen \
 	factory \
 	references_and_types \
 	union \
