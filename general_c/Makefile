@@ -16,6 +16,7 @@ DIRS =  macros \
 	malloc \
 	tun \
 	token_parse_long \
+	bytes_read \
 
 .PHONY: dirs $(DIRS)
 
